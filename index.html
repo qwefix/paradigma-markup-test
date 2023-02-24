@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Лаборатория двигателей</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=cfef0ea4-a826-48eb-9308-87ea947f228b"
+      type="text/javascript"
+    ></script>
+    <script src="https://unpkg.com/imask" defer></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <h1 class="hidden">
+      Лаборатория двигателей Ремонтируем двигатели Hyundai и Kia с 2012 года
+    </h1>
+    <header class="page-header">
+      <div class="top">
+        <div class="logo">
+          <a href="/">
+            <img src="assets/logo.svg" alt="Лаборатория двигателей" />
+          </a>
+          <p>
+            Ремонтируем двигатели<br />
+            Hyundai и Kia с 2012 года
+          </p>
+        </div>
+        <div class="address">
+          <img
+            src="/assets/mapIcon.svg"
+            alt="Адрес автоцентра: Москва, Шоссейный проезд, с4 а/2"
+          />
+          <p>
+            Адрес автоцентра: Москва, <br />
+            Шоссейный проезд, с4 а/2
+          </p>
+        </div>
+        <div class="map">
+          <img
+            src="./assets/mapPointIcon.svg"
+            alt="Адрес автоцентра: Москва, Шоссейный проезд, с4 а/2"
+          />
+          <p class="bottom-dots" id="big-map-controller">Смотреть на карте</p>
+          <div class="yamapContainer">
+            <div class="yamap" id="hover-map"></div>
+          </div>
+        </div>
+        <div class="calculate">
+          <img
+            src="./assets/calculate.svg"
+            alt="Рассчитать стоимость ремонта за 45 сек"
+          />
+          <p>
+            <span class="bottom-dots"> Рассчитать стоимость </span>
+            <br />
+            <span class="bottom-dots"> ремонта за 45 сек </span>
+          </p>
+          <div class="yamapContainer">
+            <div class="yamap" id="hover-map"></div>
+          </div>
+        </div>
+        <div class="contacts">
+          <p>
+            Задайте вопрос,
+            <br />
+            мы сейчас онлайн
+          </p>
+          <a href="#">
+            <img
+              src="./assets/contacts/whats_app.svg"
+              alt="Задайте вопрос мы сейчас онлайн"
+            />
+          </a>
+          <a href="#">
+            <img
+              src="./assets/contacts/telegram.svg"
+              alt="Задайте вопрос мы сейчас онлайн"
+            />
+          </a>
+          <a href="#">
+            <img
+              src="./assets/contacts/viber.svg"
+              alt="Задайте вопрос мы сейчас онлайн"
+            />
+          </a>
+        </div>
+        <div class="phone">
+          <p class="time">
+            <span class="bullet">&bull;</span>Звоните Пн-Сб 10:00 - 21:00
+          </p>
+          <a class="number" href="tel:+7 (925) 103 33 30">+7 (925) 103 33 30</a>
+          <p class="callback bottom-dots" id="callback-controller">
+            Заказать звонок
+            <img src="/assets/phoneIcon.svg" alt="Заказать звонок" />
+          </p>
+        </div>
+      </div>
+      <nav>
+        <a href="#">Главная</a>
+        <a href="#">Услуги</a>
+        <a href="#">Модели двигателей</a>
+        <a href="#">Отзывы</a>
+        <a href="#">Стоимость</a>
+        <a href="#">Примеры работ</a>
+        <a href="#">Полезные статьи</a>
+        <a href="#">О компании</a>
+        <a href="#">Контакты</a>
+      </nav>
+      <div id="big-map-container">
+        <div class="yamap" id="big-map"></div>
+      </div>
+      <div id="callback-container">
+        <div class="callback-popup" id="callback-popup">
+          <button id="callback-popup-close" type="button" class="close">
+            <img src="/assets/close.svg" alt="Закрыть">
+          </button>
+          <h2>
+            Быстро оставить <br />
+            заявку
+          </h2>
+          <p>
+            Введите номер — позвоним вам <br />
+            в течение 5-10 минут в рабочее время
+          </p>
+          <form>
+            <label for="callback-phone-input">Введите ваш номер телефона</label>
+            <input
+              type="text"
+              name="phone"
+              id="callback-phone-input"
+              placeholder="+7(000)000-00-00"
+            />
+            <button
+              id="callback-submit-button"
+              class="submit-button"
+              type="submit"
+              disabled
+            >
+              Перезвоните мне
+            </button>
+            <input type="checkbox" id="callback-privacy-policy" required />
+            <div class="privacy-policy">
+              <label for="callback-privacy-policy" class="custom-checkbox">
+                <span id="custom-checkbox-button" type="checkbox" tabindex="0">
+                  <img
+                    class="mark"
+                    src="/assets/checkMark.svg"
+                    alt="Нажимая кнопку вы соглашаетесь  с условиями Политики конфиденциальности"
+                  />
+                </span>
+              </label>
+              <p>
+                Нажимая кнопку вы соглашаетесь с<br />
+                условиями <a href="#"> Политики конфиденциальности </a>
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </header>
+    <section>
+      <aside class="scroll-aside"></aside>
+    </section>
+  </body>
+</html>
