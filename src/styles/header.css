@@ -6,6 +6,7 @@
   position: sticky;
   top: 0;
   background-color: white;
+  z-index: 1;
 }
 .page-header > .top {
   box-sizing: content-box;
@@ -40,9 +41,11 @@
   background-color: transparent;
   cursor: pointer;
   padding: 0;
+  margin-left: 1rem;
 }
 .page-header > .top > .burger > svg {
   width: 1rem;
+  color: white;
 }
 .page-header > .top > .logo img {
   width: 11.09vw;
@@ -317,7 +320,20 @@
   background-color: green;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 992px) {
+  .page-header {
+    height: 3.6875rem;
+    background-color: transparent;
+    color: white;
+    top: -2px;
+    padding-top: 2px;
+    transition: background-color .3s;
+  }
+  .page-header.opened,
+  .page-header[stuck] {
+    color: #1c1c21;
+    background-color: white;
+  }
   .page-header > .top > div p {
     font-size: 0.375rem;
     line-height: 0.625rem;
@@ -331,6 +347,10 @@
     display: block;
     z-index: 1;
   }
+  .page-header.opened > .top > .burger > svg,
+  .page-header[stuck] > .top > .burger > svg {
+    color: #1c1c21;
+  }
   .page-header > .top > .mobile {
     display: none;
   }
@@ -339,13 +359,14 @@
     background-color: white;
     overflow-y: scroll;
     position: fixed;
-    width: 100vw;
-    top: 5.625rem;
-    height: calc(100vh - 5.625rem);
+    width: 100%;
+    top: 0;
+    height: 100vh;
     right: -100vw;
     transition: 0.3s;
     flex-direction: column;
     padding: 1.375rem;
+    padding-top: 5.0625rem;
   }
   #mobile-menu.opened {
     right: 0vw;
@@ -390,7 +411,6 @@
     align-items: center;
     margin-left: 5rem;
   }
-  
 
   .page-header > .top > .logo {
     z-index: 1;
@@ -402,6 +422,7 @@
     width: 5.7rem;
   }
   .page-header > .top > .phone {
+    margin-left: auto;
     z-index: 1;
   }
   .page-header > .top > .phone > p {
@@ -417,9 +438,14 @@
     color: #20c863;
   }
   .page-header > .top > .phone > .number {
+    color: white;
     font-size: 0.75rem;
     line-height: 0.75rem;
     margin-bottom: 0.375rem;
+  }
+  .page-header.opened > .top > .phone > .number,
+  .page-header[stuck] > .top > .phone > .number {
+    color: #1c1c21;
   }
   .page-header > .top > .phone > .callback > img {
     display: inline;
@@ -462,7 +488,7 @@
     text-align: start;
     margin-left: 0.7rem;
     font-size: 0.7rem;
-    text-align: right;
+    text-align: center;
   }
   #callback-container > .callback-popup > form > .privacy-policy > p > br {
     display: none;

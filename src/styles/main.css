@@ -1,4 +1,5 @@
 @import "./header.css";
+@import "./first.css";
 
 * {
   transition: 0;
@@ -39,43 +40,3 @@ a {
 .bottom-dots:hover::after {
   width: 60%;
 }
-
-/* section {
-    display: flex;
-  }
-  section > aside {
-    width: 7.3vw;
-  }
-  section > main {
-    width: 92.7vw;
-  } */
-
-/* @keyframes blick {
-  0%,
-  to {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0.5;
-  }
-}
-standart-btn::after,
-.standart-dark-btn::after {
-  content: "";
-  width: 5.9895833333vw;
-  height: 7.2916666667vw;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  background-image: url(../img/general/btn-blick.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-  -webkit-animation: btn_blick 5s linear infinite;
-  animation: btn_blick 5s linear infinite;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-} */
