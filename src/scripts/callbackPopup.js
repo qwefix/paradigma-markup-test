@@ -56,5 +56,5 @@ callBackSubmit.addEventListener("click", (e) => {
   setTimeout(()=>{
     callBackContainer.classList.remove("opened");
     callBackSubmit.classList.remove('submitted')
-  },0)
+  },2000)
 });

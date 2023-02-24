@@ -1,9 +1,20 @@
-@import './header.css';
+@import "./header.css";
 
 * {
   transition: 0;
   box-sizing: border-box;
   font-family: "Manrope";
+}
+body {
+  width: 100%;
+  min-height: 300vh;
+  margin: 0;
+}
+body.noscroll {
+  overflow: hidden;
+}
+a {
+  color: #2a2a2a;
 }
 .hidden {
   display: none;
